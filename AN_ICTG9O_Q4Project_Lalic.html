@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Q4 | Project</title>
+     
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&family=IM+Fell+DW+Pica:ital@1&display=swap" rel="stylesheet">
+  <style type="text/css">
+
+     body::after {
+     content: "";
+     background: url("https://wallpaperaccess.com/full/101208.jpg"); 
+     opacity: 0.4;
+     top: 0;
+     left: 0;
+     bottom: 0;
+     right: 0;
+     position: absolute;
+     z-index: -1;   
+    }
+    body{
+      font-family: 'IM Fell DW Pica', serif;
+      background-color: #D5C5B4;
+      color: black;
+      font-size: 20px;
+      color: #6B4D57;
+    }
+    input{
+      color: #A27246;
+      border-radius: 20px;
+      border-color: #A27246;
+    }
+    fieldset{
+      background-image: url("https://cdn.pixabay.com/photo/2022/12/05/05/20/cat-7635983_960_720.png");
+      opacity: 87%;
+      background-color: #BC9F7D;
+      font-size: 25px;
+      color: #382325;
+      padding: 30px;
+      border-radius: 40px;
+    }
+    button {
+      background-color: #D5C5B4;
+      color:#A27246;
+      border-color: #A27246;
+      border-radius: 20px;
+      width: 100px;
+      height: 40px;
+    }
+    option{
+      color:#BC9F7D;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="container mt-5">
+    <center><h1><u>convert millimeters to other unit measures !!</u></h1></center> <br><br>
+   <div class="container">
+    <form>
+      <fieldset>
+        <legend>millimeter to other units</legend>
+      <div class="row">
+        <div class="col-sm-12">
+          <label for="inputMillimeter">enter value:</label>
+          <input type="number" class="form-control" id="inputMillimeter" placeholder="(number) millimeter/s">
+        </div>
+        <div class="col-sm-4">
+          <br>
+          <label for="resultCentimeters">centimeters:</label>
+          <input type="text" class="form-control" id="resultCentimeters" readonly placeholder="(number) centemeter/s">
+        </div>
+        <div class="col-sm-4">
+          <br>
+          <label for="resultMeter">meters:</label>
+          <input type="text" class="form-control" id="resultMeter" readonly  placeholder="(number) meter/s">
+        </div>
+        <div class="col-sm-4">
+          <br>
+          <label for="resultKilometers">kilometers:</label>
+          <input type="text" class="form-control" id="resultKilometers" readonly placeholder="(number) millimeter/s">
+        </div>
+        <br><br><br>
+        <div class="col-sm-12">
+        <br>
+        <button type="button" onmouseover="bigButton(this)" onmouseout="normalButton(this)"onclick="convert(); alert('the convert button is working !!!  good job')"> convert! </button>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</div>
+</div>
+
+  <script>
+    function bigButton(x) {
+    x.style.height = "60px";
+    x.style.width = "120px";
+      }
+      function normalButton(x) {
+    x.style.height = "40px";
+    x.style.width = "100px";
+      }
+
+
+  function convert() {
+  var millimeter = parseFloat(document.getElementById('inputMillimeter').value);
+  
+  var centimeters = millimeter / 10;
+  var meter = millimeter / 1000;
+  var kilometers = millimeter / 1000000;
+  
+  document.getElementById('resultCentimeters').value = centimeters.toFixed(2);
+  document.getElementById('resultMeter').value = meter.toFixed(2);
+  document.getElementById('resultKilometers').value = kilometers.toFixed(6);
+}
+</script>
+</body>
+</html>
